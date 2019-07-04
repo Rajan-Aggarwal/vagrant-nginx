@@ -3,8 +3,8 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/trusty64"
 	
 	config.vm.provider "virtualbox" do |v|
-		vb.memory = 2048 # 2 GB of memory
-		vb.cpus = 4
+		v.memory = 2048 # 2 GB of memory
+		v.cpus = 4
 	end
 
 	# Network forwarding
@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
 	# in order to add a dns
 	# add an entry in the /etc/hosts
 	
-	config.vm.sync_folders ".", "/var/www/html", nfs => {
+	config.vm.sync_folders ".", "/var/www/html", :nfs => {
 		:mount_options => [dmode="777", fmode="666"]
 	}
 
