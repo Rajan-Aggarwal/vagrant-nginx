@@ -8,7 +8,7 @@ apt-get update
 apt-get install -y git
 
 # nginx
-apt-get install ngin
+apt-get install nginx
 service nginx restart
 
 
